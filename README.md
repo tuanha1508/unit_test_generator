@@ -2,6 +2,8 @@
 
 A tool for automatically generating, refining, and analyzing C++ unit tests using a local LLaMA model (via llama-cpp-python).
 
+**Note:** While this generator supports any C++ project, the tests provided in this repository have been generated for the C++ [OrgChartApi](https://github.com/keploy/orgChartApi) project.
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -10,7 +12,7 @@ A tool for automatically generating, refining, and analyzing C++ unit tests usin
 - [Usage](#usage)
   - [Generate and Refine Tests](#generate-and-refine-tests)
   - [Coverage Analysis](#coverage-analysis)
-- [C++ Project: orgChartApi](#c-project-orgchartapi)
+- [C++ Project Under Test: orgChartApi](#c-project-orgchartapi)
   - [Build](#build)
   - [Run Tests](#run-tests)
   - [Database Setup](#database-setup)
@@ -23,6 +25,12 @@ A tool for automatically generating, refining, and analyzing C++ unit tests usin
 - CMake ≥ 3.15 and a C++17-capable compiler (g++ or clang++)
 - OpenSSL (development libraries)
 - A local GGUF model file for LLaMA (e.g., `Gemma 2B IT.gguf`) — download it from Hugging Face and place it in the project root.
+
+- A C++ project directory under test in the root of this repo. For example, to test the OrgChartApi project:
+  ```bash
+  git clone https://github.com/keploy/orgChartApi.git orgChartApi
+  ```
+  You can clone any other C++ project similarly; just update the `project.path` in `generator/config.yaml` to point to its folder.
 
 ## Installation
 
@@ -107,7 +115,7 @@ python3 generator/generate_tests.py
 
 This will read existing tests and source files, then output recommendations in `coverage_analysis.md`.
 
-## C++ Project: orgChartApi
+## C++ Project Under Test: orgChartApi
 
 ### Build
 
