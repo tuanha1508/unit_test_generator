@@ -1,0 +1,3 @@
+pyyaml
+llama-cpp-python
+huggingface-hub 
