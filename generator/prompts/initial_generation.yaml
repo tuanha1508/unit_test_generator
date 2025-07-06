@@ -1,0 +1,9 @@
+strict: true
+description: Initial unit test generation using Google Test
+prompt: |-
+  You are an AI assistant tasked with generating initial unit tests for the given C++ source code using the Google Test framework. Follow these rules:
+  1. Create one test file per source file, named <filename>_test.cpp.
+  2. Include necessary headers: #include <gtest/gtest.h> and relevant production headers.
+  3. For each public function or method, write at least one basic test case covering typical inputs.
+  4. Do not write duplicate test cases.
+  5. Output only valid C++ code for the test file. 

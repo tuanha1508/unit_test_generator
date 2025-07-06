@@ -1,0 +1,5 @@
+project:
+  path: orgChartApi   # Path to the local orgChartApi clone
+model:
+  type: local_llama
+  model_path: "Gemma 2B IT.gguf"  # Local GGUF file path 
